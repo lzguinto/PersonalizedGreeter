@@ -10,10 +10,14 @@ import android.widget.EditText;
 
 public class BeGreeted extends AppCompatActivity {
 
-    String strUsersName = "";
+    String strUsersFirst = "";
+    String strUsersMiddle = "";
+    String strUsersLast = "";
 
     Button btnGreetMe;
-    EditText edtxtNameField;
+    EditText edtxtFirstName;
+    EditText edtxtMiddleName;
+    EditText edtxtLastName;
     TextView txtvwGreetingSpace;
 
 
@@ -22,8 +26,10 @@ public class BeGreeted extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_be_greeted);
 
-        btnGreetMe = (Button) findViewById(R.id.btnGreetMe);
-        edtxtNameField = (EditText) findViewById(R.id.edtxtNameField);
+        btnGreetMe = (Button) find ViewById(R.id.btnGreetMe);
+        edtxtFirstName = (EditText) findViewById(R.id.edtxtFirst);
+        edtxtMiddleName = (EditText) findViewById(R.id.edtxtMiddle);
+        edtxtLastName = (EditText) findViewById(R.id.edtxtLast);
         txtvwGreetingSpace = (TextView) findViewById(R.id.txtvwGreetingSpace);
     }
 
@@ -31,8 +37,11 @@ public class BeGreeted extends AppCompatActivity {
     {
         Resources res = getResources();
 
-        strUsersName = edtxtNameField.getText().toString();
+        strUsersFirst = edtxtFirstName.getText().toString();
+        strUsersMiddle = edtxtMiddleName.getText().toString();
+        strUsersLast = edtxtLastName.getText().toString();
 
-        txtvwGreetingSpace.setText(String.format(res.getString(R.string.strGreeting), strUsersName));
+        txtvwGreetingSpace.setText(String.format(res.getString(R.string.strGreeting), strUsersFirst,
+                strUsersMiddle, strUsersLast));
     }
 }
