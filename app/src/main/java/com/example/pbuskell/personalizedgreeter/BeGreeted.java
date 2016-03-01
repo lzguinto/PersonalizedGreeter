@@ -26,7 +26,7 @@ public class BeGreeted extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_be_greeted);
 
-        btnGreetMe = (Button) find ViewById(R.id.btnGreetMe);
+        btnGreetMe = (Button) findViewById(R.id.btnGreetMe);
         edtxtFirstName = (EditText) findViewById(R.id.edtxtFirst);
         edtxtMiddleName = (EditText) findViewById(R.id.edtxtMiddle);
         edtxtLastName = (EditText) findViewById(R.id.edtxtLast);
